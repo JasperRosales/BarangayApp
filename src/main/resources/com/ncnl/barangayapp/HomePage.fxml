@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="576.0" prefWidth="210.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+         <children>
+            <Text fill="#4d4949" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Barangay" textAlignment="CENTER" wrappingWidth="122.13671875">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+            </Text>
+            <Line endX="28.29" endY="0.21" opacity="0.76" startX="-100.0" stroke="#393333">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Line>
+            <Text fill="#4d4949" strokeType="OUTSIDE" strokeWidth="0.0" text="What to know?" textAlignment="CENTER" wrappingWidth="194.13">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text fill="#1b1a1a" stroke="#f2cece" strokeType="OUTSIDE" strokeWidth="0.0" text="This app is a fast and adequate system that can render and provide fast insights and manipulate inputs that are compiled in an in-disk database" textAlignment="CENTER" wrappingWidth="178.13">
+               <font>
+                  <Font name="SansSerif Regular" size="11.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+
+      <TabPane fx:id="contentPane" layoutX="210.0" prefHeight="702.0" prefWidth="825.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="homePage" closable="false" text="Home">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <fx:include source="WelcomePage.fxml" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="residentPage" closable="false" text="Resident">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <fx:include source="ResidentPage.fxml" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="dashboardPage" closable="false" text="Dashboard">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <fx:include source="Dashboard.fxml" AnchorPane.bottomAnchor="-29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
