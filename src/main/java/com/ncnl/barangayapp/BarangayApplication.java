@@ -8,27 +8,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.sql.Connection;
 
 
 public class BarangayApplication extends Application{
     @Override
     public void start(Stage stage) throws IOException {
-        DatabaseService databaseService = new DatabaseService(DatabaseManager.newInstance());
 
+        DatabaseService databaseService = new DatabaseService(DatabaseManager.getInstance());
         databaseService.initializeTable();
-        databaseService.insertFakeData(5);
+        databaseService.initializeBin();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(BarangayApplication.class.getResource("HomePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(BarangayApplication.class.getResource("MainPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Barangay App");
         stage.setScene(scene);
         stage.show();
+
     }
-
-
-
-    
 
     public static void main(String[] args){ launch(); }
 

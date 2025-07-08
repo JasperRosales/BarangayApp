@@ -44,7 +44,7 @@
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fx:id="totalResidentsCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="26.0" />
                                        </font>
@@ -82,7 +82,7 @@
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fx:id="totalSeniorCitezenCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="26.0" />
                                        </font>
@@ -113,7 +113,7 @@
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fx:id="totalStudentCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="26.0" />
                                        </font>
@@ -144,7 +144,7 @@
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fx:id="totalUnclaimed" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="26.0" />
                                        </font>
@@ -175,7 +175,7 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart prefHeight="122.0" prefWidth="219.0">
+                                    <BarChart fx:id="residentDistributionBarChart" prefHeight="122.0" prefWidth="219.0">
                                        <xAxis>
                                           <CategoryAxis side="BOTTOM" />
                                        </xAxis>
@@ -206,7 +206,7 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart prefHeight="122.0" prefWidth="219.0">
+                                    <BarChart fx:id="genderDistributionBarChart" prefHeight="122.0" prefWidth="219.0">
                                        <xAxis>
                                           <CategoryAxis side="BOTTOM" />
                                        </xAxis>
@@ -244,7 +244,7 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart prefHeight="122.0" prefWidth="219.0">
+                                    <BarChart fx:id="studentDistributionBarChart" prefHeight="122.0" prefWidth="219.0">
                                        <xAxis>
                                           <CategoryAxis side="BOTTOM" />
                                        </xAxis>
@@ -305,7 +305,7 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart prefHeight="122.0" prefWidth="219.0">
+                                    <BarChart fx:id="claimStatusBarChart" prefHeight="122.0" prefWidth="219.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
@@ -336,7 +336,7 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current:" wrappingWidth="426.8984375">
+                                    <Text fx:id="currentLabelSummary" strokeType="OUTSIDE" strokeWidth="0.0" text="Current:" wrappingWidth="426.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="12.0" />
                                        </font>
@@ -344,7 +344,7 @@
                                           <Insets top="15.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency: " wrappingWidth="426.8984375">
+                                    <Text fx:id="frequencyLabelSummary" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency: " wrappingWidth="426.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="12.0" />
                                        </font>
@@ -352,15 +352,7 @@
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mode: " wrappingWidth="426.8984375">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="12.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conclusion:" wrappingWidth="426.8984375">
+                                    <Text fx:id="conclusionLabelSummary" strokeType="OUTSIDE" strokeWidth="0.0" text="Conclusion:" wrappingWidth="426.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="12.0" />
                                        </font>

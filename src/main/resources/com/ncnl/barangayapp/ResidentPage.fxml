@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -27,12 +28,12 @@
                   <Font name="SansSerif Bold" size="30.0" />
                </font>
             </Text>
-            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="801.0" spacing="5.0">
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="1149.0" spacing="5.0">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
                <children>
-                  <TextField fx:id="searchBar" prefHeight="25.0" prefWidth="659.0" promptText="Type here for dynamic search" style="-fx-background-color: white;">
+                  <TextField fx:id="searchBar" prefHeight="25.0" prefWidth="425.0" promptText="Type here for dynamic search" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -41,7 +42,7 @@
                         </DropShadow>
                      </effect>
                   </TextField>
-                  <ComboBox fx:id="ageBox" prefHeight="25.0" prefWidth="72.0" promptText="Age" style="-fx-background-color: white;">
+                  <ComboBox fx:id="ageBox" prefHeight="25.0" prefWidth="170.0" promptText="Age" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -50,7 +51,7 @@
                         </DropShadow>
                      </effect>
                   </ComboBox>
-                  <ComboBox fx:id="sexBox" prefHeight="25.0" prefWidth="72.0" promptText="Sex" style="-fx-background-color: white;">
+                  <ComboBox fx:id="sexBox" prefHeight="25.0" prefWidth="145.0" promptText="Sex" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -59,7 +60,7 @@
                         </DropShadow>
                      </effect>
                   </ComboBox>
-                  <ComboBox fx:id="categoryBox" prefHeight="25.0" prefWidth="147.0" promptText="Category" style="-fx-background-color: white;">
+                  <ComboBox fx:id="categoryBox" prefHeight="25.0" prefWidth="160.0" promptText="Category" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -68,7 +69,7 @@
                         </DropShadow>
                      </effect>
                   </ComboBox>
-                  <ComboBox fx:id="statusBox" prefHeight="25.0" prefWidth="112.0" promptText="Status" style="-fx-background-color: white;">
+                  <ComboBox fx:id="statusBox" prefHeight="25.0" prefWidth="143.0" promptText="Status" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -77,7 +78,19 @@
                         </DropShadow>
                      </effect>
                   </ComboBox>
-                  <Button id="addBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: white;" text="Add Resident">
+                  <Button id="addBtn" fx:id="clearFiltersBtn" mnemonicParsing="false" onAction="#clearFilters" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: white;" text="Clear Filters">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.5131579041481018" green="0.5107821822166443" blue="0.5107821822166443" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="addBtn" fx:id="refreshBtn" mnemonicParsing="false" onAction="#handleRefreshTable" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: white;" text="Refresh">
                      <effect>
                         <DropShadow>
                            <color>
@@ -93,6 +106,56 @@
                   <Insets top="5.0" />
                </VBox.margin>
             </Separator>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="1278.0" spacing="5.0">
+               <children>
+                  <Button id="addBtn" fx:id="addResidentBtn" mnemonicParsing="false" onAction="#showInputModal" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: white;" text="Add ">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button id="addBtn" fx:id="updateResidentBtn" mnemonicParsing="false" onAction="#handleUpdateData" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: white;" text="Update Data">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button id="addBtn" fx:id="updateStatusBtn" mnemonicParsing="false" onAction="#handleChangeStatus" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: white;" text="Update Claim">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button id="addBtn" fx:id="deleteResidentBtn" mnemonicParsing="false" onAction="#handleDeleteResident" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: white;" text="Delete">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Button id="addBtn" fx:id="importDataBtn" mnemonicParsing="false" onAction="#handleDataImport" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Import">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button id="addBtn" fx:id="addResidentBtn11" mnemonicParsing="false" onAction="#handleDataExport" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Export">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Button>
+                  <Button id="addBtn" fx:id="addResidentBtn111" mnemonicParsing="false" onAction="#handleBin" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Bin">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="608.0" prefWidth="1918.0">
                <VBox.margin>
                   <Insets top="10.0" />
@@ -100,14 +163,14 @@
                <children>
                   <TableView fx:id="residentsTable" prefHeight="584.0" prefWidth="1733.0">
                     <columns>
-                      <TableColumn fx:id="fullnameCol" editable="false" prefWidth="275.0" text="Full Name" />
-                      <TableColumn fx:id="ageCol" editable="false" minWidth="0.0" prefWidth="40.0" text="Age" />
-                        <TableColumn fx:id="sexCol" editable="false" minWidth="0.0" prefWidth="54.0" text="Sex" />
+                        <TableColumn fx:id="idCol" minWidth="0.0" prefWidth="97.0" text="ID" />
+                      <TableColumn fx:id="fullnameCol" editable="false" prefWidth="365.0" text="Full Name" />
+                      <TableColumn fx:id="ageCol" editable="false" minWidth="0.0" prefWidth="87.0" text="Age" />
+                        <TableColumn fx:id="sexCol" editable="false" minWidth="0.0" prefWidth="75.0" text="Sex" />
                         <TableColumn fx:id="locationCol" editable="false" minWidth="0.0" prefWidth="236.0" text="Location" />
-                        <TableColumn fx:id="categoryCol" editable="false" minWidth="0.0" prefWidth="156.0" text="Category" />
-                        <TableColumn fx:id="addInfoCol" editable="false" minWidth="0.0" prefWidth="153.0" text="Additional Information" />
-                        <TableColumn fx:id="statusCol" editable="false" minWidth="0.0" prefWidth="142.0" text="Status" />
-                        <TableColumn fx:id="actionCol" minWidth="0.0" prefWidth="161.0" text="Action" />
+                        <TableColumn fx:id="categoryCol" editable="false" minWidth="0.0" prefWidth="115.0" text="Category" />
+                        <TableColumn fx:id="addInfoCol" editable="false" minWidth="0.0" prefWidth="225.0" text="Additional Information" />
+                        <TableColumn fx:id="statusCol" editable="false" minWidth="0.0" prefWidth="93.0" text="Status" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

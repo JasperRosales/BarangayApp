@@ -1,11 +1,8 @@
 package com.ncnl.barangayapp.service;
 
 import com.ncnl.barangayapp.database.DatabaseManager;
-import com.ncnl.barangayapp.model.Resident;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DatabaseService{
     private final DatabaseManager db;
@@ -37,42 +34,25 @@ public class DatabaseService{
         });
     }
 
-
-    public ArrayList<Resident> getAllResidentData() {
-        return db.withConnection(conn -> {
-            ArrayList<Resident> res = new ArrayList<>();
-
-            try (Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT * FROM residents")) {
-
-                while (rs.next()) {
-                    res.add(Resident.builder()
-                            .fullname(rs.getString("fullname"))
-                            .age(rs.getInt("age"))
-                            .sex(rs.getString("sex"))
-                            .location(rs.getString("location"))
-                            .category(rs.getString("category"))
-                            .additional_info(rs.getString("additional_info"))
-                            .status(rs.getString("status"))
-                            .build());
-                }
+    public void initializeBin(){
+        db.withConnection(conn -> {
+            try(Statement stmt = conn.createStatement()){
+                stmt.execute("""
+                        CREATE TABLE IF NOT EXISTS resident_bin (
+                            id TEXT PRIMARY KEY,
+                            fullname TEXT,
+                            sex TEXT,
+                            age INTEGER,
+                            location TEXT,
+                            category TEXT,
+                            additional_info TEXT,
+                            status TEXT,
+                            timestamp TEXT
+                        );
+                        """);
             }
-
-            return res;
+            return null;
         });
     }
-
-
-    public void insertFakeData(Integer count){
-        ResidentService service = new ResidentService(db);
-
-        List<Resident> fakeResidents = ResidentService.generateSimpleFakeResidents(count);
-
-        for (Resident r : fakeResidents) {
-            service.insertIfNotExists(r);
-        }
-    }
-
-
 
 }
