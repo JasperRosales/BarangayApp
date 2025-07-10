@@ -7,8 +7,6 @@ import com.ncnl.barangayapp.model.Resident;
 import com.ncnl.barangayapp.util.InputModal;
 import javafx.collections.ObservableList;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -22,20 +20,28 @@ public class ResidentService {
         return dbCommand.executeCommand(dbQuery::readAllResidents);
     }
 
-    public List<Resident> loadAllResidentsInBin(){
+    public List<Resident> loadAllResidentsInBin() {
         return dbCommand.executeCommand(dbQuery::readAllFromBin);
     }
 
     public void createNewResident(Consumer<Resident> onSuccess) {
         Resident newResident = Resident.builder()
-                .fullname("")
-                .sex("Male")
+                .lastname("N/A")
+                .firstname("N/A")
+                .middlename("N/A")
+                .qualifier("N/A")
+                .number("N/A")
+                .streetName("N/A")
+                .location("N/A")
+                .placeOfBirth("N/A")
+                .dateOfBirth("N/A")
                 .age(0)
-                .location("")
-                .category("Junior High")
-                .additional_info("")
+                .sex("Male")
+                .civilStatus("N/A")
+                .citizenship("N/A")
+                .occupation("N/A")
+                .relationshipToHouseHoldHead("N/A")
                 .status("Unclaimed")
-                .timestamp(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))
                 .build();
 
         ModalCommandExecute.getInstance().executeCommand(() -> {
@@ -77,7 +83,7 @@ public class ResidentService {
             if (dbQuery.existsInBin(String.valueOf(r.getId()))) {
                 String choice = AlertService.getInstance().showChoice(
                         "Duplicate in Bin",
-                        "Resident " + r.getFullname() + " already exists in the bin. What do you want to do?",
+                        "Resident with ID " + r.getId() + " already exists in the bin. What do you want to do?",
                         List.of("Skip", "Overwrite", "Delete & Re-Add")
                 );
                 switch (choice) {
@@ -137,14 +143,22 @@ public class ResidentService {
         ModalCommandExecute.getInstance().executeCommand(() -> {
             new InputModal<Resident>().renderWithResident(selectedResident, updated -> {
                 dbQuery.update(selectedResident.getId(), updated);
-                selectedResident.setFullname(updated.getFullname());
-                selectedResident.setSex(updated.getSex());
-                selectedResident.setAge(updated.getAge());
+                selectedResident.setLastname(updated.getLastname());
+                selectedResident.setFirstname(updated.getFirstname());
+                selectedResident.setMiddlename(updated.getMiddlename());
+                selectedResident.setQualifier(updated.getQualifier());
+                selectedResident.setNumber(updated.getNumber());
+                selectedResident.setStreetName(updated.getStreetName());
                 selectedResident.setLocation(updated.getLocation());
-                selectedResident.setCategory(updated.getCategory());
-                selectedResident.setAdditional_info(updated.getAdditional_info());
+                selectedResident.setPlaceOfBirth(updated.getPlaceOfBirth());
+                selectedResident.setDateOfBirth(updated.getDateOfBirth());
+                selectedResident.setAge(updated.getAge());
+                selectedResident.setSex(updated.getSex());
+                selectedResident.setCivilStatus(updated.getCivilStatus());
+                selectedResident.setCitizenship(updated.getCitizenship());
+                selectedResident.setOccupation(updated.getOccupation());
+                selectedResident.setRelationshipToHouseHoldHead(updated.getRelationshipToHouseHoldHead());
                 selectedResident.setStatus(updated.getStatus());
-                selectedResident.setTimestamp(updated.getTimestamp());
             });
             return selectedResident;
         });

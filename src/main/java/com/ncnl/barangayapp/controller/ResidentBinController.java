@@ -16,8 +16,10 @@ import java.util.List;
 public class ResidentBinController {
 
     @FXML private TableView<Resident> binTable;
-    @FXML private TableColumn<Resident, String> idBinCol, fullnameBinCol, ageBinCol, sexBinCol, locationBinCol,
-            categoryBinCol, addInfoBinCol,statusBinCol;
+    @FXML private TableColumn<Resident, String> idBinCol, lastnameBinCol, firstnameBinCol, middlenameBinCol,
+            qualifierBinCol, numberBinCol, streetnameCol, locationBinCol, placeofbirthBinCol, dateofbirthBinCol,
+            ageBinCol, sexBinCol, civilstatusBinCol, citizenshipBinCol, occupationBinCol,
+            relationshipBinCol, statusBinCol;
 
     private final ResidentService service = new ResidentService();
     private final ObservableList<Resident> binResidents = FXCollections.observableArrayList();
@@ -25,12 +27,21 @@ public class ResidentBinController {
     @FXML
     public void initialize() {
         idBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getId().toString()));
-        fullnameBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getFullname()));
+        lastnameBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getLastname()));
+        firstnameBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getFirstname()));
+        middlenameBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getMiddlename()));
+        qualifierBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getQualifier()));
+        numberBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNumber()));
+        streetnameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getStreetName()));
+        locationBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getLocation()));
+        placeofbirthBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getPlaceOfBirth()));
+        dateofbirthBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getDateOfBirth()));
         ageBinCol.setCellValueFactory(cell -> new SimpleStringProperty(String.valueOf(cell.getValue().getAge())));
         sexBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getSex()));
-        locationBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getLocation()));
-        categoryBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCategory()));
-        addInfoBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getAdditional_info()));
+        civilstatusBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCivilStatus()));
+        citizenshipBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCitizenship()));
+        occupationBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOccupation()));
+        relationshipBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getRelationshipToHouseHoldHead()));
         statusBinCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getStatus()));
 
         List<Resident> fromBin = service.loadAllResidentsInBin();
@@ -38,7 +49,6 @@ public class ResidentBinController {
         binTable.setItems(binResidents);
         binTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
-
 
     @FXML
     public void handleDeleteSelected() {

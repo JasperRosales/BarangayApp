@@ -11,28 +11,45 @@ public class ResidentMapper {
     public static Resident toInsertedResident(Resident source) {
         return Resident.builder()
                 .id(source.getId())
-                .fullname(source.getFullname())
-                .sex(source.getSex())
-                .age(source.getAge())
+                .lastname(source.getLastname())
+                .firstname(source.getFirstname())
+                .middlename(source.getMiddlename())
+                .qualifier(source.getQualifier())
+                .number(source.getNumber())
+                .streetName(source.getStreetName())
                 .location(source.getLocation())
-                .category(source.getCategory())
-                .additional_info(source.getAdditional_info())
+                .placeOfBirth(source.getPlaceOfBirth())
+                .dateOfBirth(source.getDateOfBirth())
+                .age(source.getAge())
+                .sex(source.getSex())
+                .civilStatus(source.getCivilStatus())
+                .citizenship(source.getCitizenship())
+                .occupation(source.getOccupation())
+                .relationshipToHouseHoldHead(source.getRelationshipToHouseHoldHead())
                 .status(source.getStatus())
-                .timestamp(source.getTimestamp())
                 .build();
     }
 
-    public static Resident mapResultSetToResident(ResultSet rs) throws SQLException{
+
+    public static Resident mapResultSetToResident(ResultSet rs) throws SQLException {
         return Resident.builder()
                 .id(UUID.fromString(rs.getString("id")))
-                .fullname( rs.getString("fullname"))
-                .sex( rs.getString("sex"))
-                .age(rs.getInt("age"))
+                .lastname(rs.getString("lastname"))
+                .firstname(rs.getString("firstname"))
+                .middlename(rs.getString("middlename"))
+                .qualifier(rs.getString("qualifier"))
+                .number(rs.getString("number"))
+                .streetName(rs.getString("street_name"))
                 .location(rs.getString("location"))
-                .category(rs.getString("category"))
-                .additional_info(rs.getString("additional_info"))
+                .placeOfBirth(rs.getString("place_of_birth"))
+                .dateOfBirth(rs.getString("date_of_birth"))
+                .age(rs.getInt("age"))
+                .sex(rs.getString("sex"))
+                .civilStatus(rs.getString("civil_status"))
+                .citizenship(rs.getString("citizenship"))
+                .occupation(rs.getString("occupation"))
+                .relationshipToHouseHoldHead(rs.getString("relationship_to_household_head"))
                 .status(rs.getString("status"))
-                .timestamp(rs.getString("timestamp"))
                 .build();
     }
 }

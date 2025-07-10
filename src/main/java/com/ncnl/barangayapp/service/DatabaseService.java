@@ -19,14 +19,22 @@ public class DatabaseService{
                 stmt.execute("""
                 CREATE TABLE IF NOT EXISTS residents (
                     id TEXT PRIMARY KEY,
-                    fullname TEXT NOT NULL,
-                    sex TEXT,
-                    age INTEGER,
+                    lastname TEXT,
+                    firstname TEXT,
+                    middlename TEXT,
+                    qualifier TEXT,
+                    number TEXT,
+                    street_name TEXT,
                     location TEXT,
-                    category TEXT,
-                    additional_info TEXT,
-                    status TEXT,
-                    timestamp TEXT
+                    place_of_birth TEXT,
+                    date_of_birth TEXT,
+                    age INTEGER,
+                    sex TEXT,
+                    civil_status TEXT,
+                    citizenship TEXT,
+                    occupation TEXT,
+                    relationship_to_household_head TEXT,
+                    status TEXT
                 );
             """);
             }
@@ -34,25 +42,35 @@ public class DatabaseService{
         });
     }
 
-    public void initializeBin(){
+
+    public void initializeBin() {
         db.withConnection(conn -> {
-            try(Statement stmt = conn.createStatement()){
+            try (Statement stmt = conn.createStatement()) {
                 stmt.execute("""
-                        CREATE TABLE IF NOT EXISTS resident_bin (
-                            id TEXT PRIMARY KEY,
-                            fullname TEXT,
-                            sex TEXT,
-                            age INTEGER,
-                            location TEXT,
-                            category TEXT,
-                            additional_info TEXT,
-                            status TEXT,
-                            timestamp TEXT
-                        );
-                        """);
+                CREATE TABLE IF NOT EXISTS resident_bin (
+                    id TEXT PRIMARY KEY,
+                    lastname TEXT,
+                    firstname TEXT,
+                    middlename TEXT,
+                    qualifier TEXT,
+                    number TEXT,
+                    street_name TEXT,
+                    location TEXT,
+                    place_of_birth TEXT,
+                    date_of_birth TEXT,
+                    age INTEGER,
+                    sex TEXT,
+                    civil_status TEXT,
+                    citizenship TEXT,
+                    occupation TEXT,
+                    relationship_to_household_head TEXT,
+                    status TEXT
+                );
+            """);
             }
             return null;
         });
     }
+
 
 }

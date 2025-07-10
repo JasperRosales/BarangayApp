@@ -3,7 +3,6 @@ package com.ncnl.barangayapp.model;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Setter;
 
 import java.util.UUID;
 
@@ -12,15 +11,23 @@ import java.util.UUID;
 @Builder
 public class Resident {
     @Builder.Default
-    private  UUID id = UUID.randomUUID();
-    private  String fullname;
-    private  String sex;
-    private  Integer age;
-    private  String location;
-    private  String category;
-    private  String additional_info;
+    private UUID id = UUID.randomUUID();
+    private String lastname;
+    private String firstname;
+    private String middlename;
+    private String qualifier; // Jr or Sr
+    private String number;
+    private String streetName;
+    private String location; //Name of SUBD/ZONE/SITIO/PUROK
+    private String placeOfBirth;
+    private String dateOfBirth;
+    private Integer age;
+    private String sex;
+    private String civilStatus;
+    private String citizenship;
+    private String occupation;
+    private String relationshipToHouseHoldHead;
     private String status;
-    private String timestamp;
 }
 
 

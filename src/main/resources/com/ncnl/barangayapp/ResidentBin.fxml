@@ -8,18 +8,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="622.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ncnl.barangayapp.controller.ResidentBinController">
-   <VBox layoutY="-7.0" prefHeight="630.0" prefWidth="903.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane prefHeight="616.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ncnl.barangayapp.controller.ResidentBinController">
+   <VBox layoutY="-7.0" prefHeight="616.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-          <TableView fx:id="binTable" prefHeight="574.0" prefWidth="903.0">
+          <TableView fx:id="binTable" prefHeight="567.0" prefWidth="1400.0">
               <columns>
-                  <TableColumn fx:id="idBinCol" prefWidth="65.0" text="ID" />
-                  <TableColumn fx:id="fullnameBinCol" prefWidth="208.0" text="Full Name" />
-               <TableColumn fx:id="ageBinCol" prefWidth="61.0" text="Age" />
-               <TableColumn fx:id="sexBinCol" prefWidth="66.0" text="Sex" />
-               <TableColumn fx:id="locationBinCol" prefWidth="161.0" text="Location" />
-               <TableColumn fx:id="categoryBinCol" minWidth="0.0" prefWidth="128.0" text="Category" />
-               <TableColumn fx:id="addInfoBinCol" prefWidth="131.0" text="Addional Info" />
+                  <TableColumn fx:id="idBinCol" prefWidth="22.0" text="ID" />
+               <TableColumn fx:id="lastnameBinCol" minWidth="0.0" prefWidth="72.0" text="Last" />
+               <TableColumn fx:id="firstnameBinCol" minWidth="0.0" prefWidth="72.0" text="First" />
+               <TableColumn fx:id="middlenameBinCol" minWidth="0.0" prefWidth="72.0" text="Middle" />
+               <TableColumn fx:id="qualifierBinCol" minWidth="0.0" prefWidth="72.0" text="Qualifier" />
+               <TableColumn fx:id="numberBinCol" minWidth="0.0" prefWidth="72.0" text="Number" />
+               <TableColumn fx:id="streetnameCol" minWidth="0.0" prefWidth="72.0" text="Street Name" />
+               <TableColumn fx:id="locationBinCol" minWidth="0.0" prefWidth="72.0" text="Location" />
+               <TableColumn fx:id="placeofbirthBinCol" minWidth="0.0" prefWidth="72.0" text="Place of Birth" />
+               <TableColumn fx:id="dateofbirthBinCol" minWidth="0.0" prefWidth="72.0" text="Date of Birth" />
+               <TableColumn fx:id="ageBinCol" minWidth="0.0" prefWidth="72.0" text="Age" />
+               <TableColumn fx:id="sexBinCol" minWidth="0.0" prefWidth="72.0" text="Sex" />
+               <TableColumn fx:id="civilstatusBinCol" minWidth="0.0" prefWidth="72.0" text="Civil Status" />
+               <TableColumn fx:id="citizenshipBinCol" minWidth="0.0" prefWidth="72.0" text="Citizenship" />
+               <TableColumn fx:id="occupationBinCol" minWidth="0.0" prefWidth="72.0" text="Occupation" />
+               <TableColumn fx:id="relationshipBinCol" minWidth="0.0" prefWidth="72.0" text="Relationship" />
                <TableColumn fx:id="statusBinCol" minWidth="0.0" prefWidth="72.0" text="Status" />
               </columns>
             <columnResizePolicy>

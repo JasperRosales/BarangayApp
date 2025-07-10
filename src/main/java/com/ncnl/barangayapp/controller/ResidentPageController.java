@@ -2,7 +2,7 @@ package com.ncnl.barangayapp.controller;
 
 import com.ncnl.barangayapp.model.AgeRange;
 import com.ncnl.barangayapp.model.Resident;
-import com.ncnl.barangayapp.model.ResidentCategory;
+import com.ncnl.barangayapp.model.ResidentOccupation;
 import com.ncnl.barangayapp.service.AlertService;
 import com.ncnl.barangayapp.service.FilterService;
 import com.ncnl.barangayapp.service.ImportExportService;
@@ -32,9 +32,15 @@ public class ResidentPageController implements Initializable {
 
     @FXML private TextField searchBar;
     @FXML private ComboBox<String> ageBox, sexBox, categoryBox, statusBox;
+    @FXML private Button clearFiltersBtn, refreshBtn, addResidentBtn, updateResidentBtn, updateStatusBtn,
+            deleteResidentBtn, importDataBtn, exportDataBtn, binDataBtn;
+
     @FXML private TableView<Resident> residentsTable;
-    @FXML private TableColumn<Resident, String> idCol, fullnameCol, ageCol, sexCol, locationCol,
-            categoryCol, addInfoCol, statusCol;
+
+    @FXML private TableColumn<Resident, String> idCol, lastnameCol, firstnameCol, middlenameCol, qualifierCol,
+            numberCol, streetnameCol, locationCol, placeofbirthCol, dateofbirthCol,
+            sexCol, civilstatusCol, citizenshipCol, occupationCol, relationshipCol, statusCol;
+    @FXML private TableColumn<Resident, Integer> ageCol;
 
     private final ResidentService residentService = new ResidentService();
     private final FilterService filterService = new FilterService();
@@ -50,19 +56,28 @@ public class ResidentPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getId().toString()));
-        fullnameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getFullname()));
-        ageCol.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getAge()).asString());
-        sexCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getSex()));
+        lastnameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getLastname()));
+        firstnameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getFirstname()));
+        middlenameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getMiddlename()));
+        qualifierCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getQualifier()));
+        numberCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNumber()));
+        streetnameCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getStreetName()));
         locationCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getLocation()));
-        categoryCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCategory()));
-        addInfoCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getAdditional_info()));
+        placeofbirthCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getPlaceOfBirth()));
+        dateofbirthCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getDateOfBirth()));
+        ageCol.setCellValueFactory(cell -> new SimpleIntegerProperty(cell.getValue().getAge()).asObject());
+        sexCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getSex()));
+        civilstatusCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCivilStatus()));
+        citizenshipCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCitizenship()));
+        occupationCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getOccupation()));
+        relationshipCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getRelationshipToHouseHoldHead()));
         statusCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getStatus()));
 
         ageList.add("— Select Age Range —");
         ageList.addAll(Arrays.stream(AgeRange.values()).map(AgeRange::getLabel).toList());
 
         categoryList.add("— Select Category —");
-        categoryList.addAll(Arrays.stream(ResidentCategory.values()).map(ResidentCategory::getLabel).toList());
+        categoryList.addAll(Arrays.stream(ResidentOccupation.values()).map(ResidentOccupation::getLabel).toList());
 
         ageBox.setItems(ageList);
         categoryBox.setItems(categoryList);
@@ -160,7 +175,6 @@ public class ResidentPageController implements Initializable {
     @FXML
     public void handleBin(ActionEvent actionEvent) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/ncnl/barangayapp/ResidentBin.fxml"));
             Parent root = loader.load();
 
@@ -178,8 +192,4 @@ public class ResidentPageController implements Initializable {
             AlertService.getInstance().showWarning("Failed", "Could not open Bin view.");
         }
     }
-
-
-
-
 }

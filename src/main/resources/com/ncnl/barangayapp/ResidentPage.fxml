@@ -60,7 +60,7 @@
                         </DropShadow>
                      </effect>
                   </ComboBox>
-                  <ComboBox fx:id="categoryBox" prefHeight="25.0" prefWidth="160.0" promptText="Category" style="-fx-background-color: white;">
+                  <ComboBox fx:id="categoryBox" prefHeight="25.0" prefWidth="160.0" promptText="Occupation" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow>
                            <color>
@@ -141,12 +141,12 @@
                         <InnerShadow />
                      </effect>
                   </Button>
-                  <Button id="addBtn" fx:id="addResidentBtn11" mnemonicParsing="false" onAction="#handleDataExport" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Export">
+                  <Button id="addBtn" fx:id="exportDataBtn" mnemonicParsing="false" onAction="#handleDataExport" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Export">
                      <effect>
                         <InnerShadow />
                      </effect>
                   </Button>
-                  <Button id="addBtn" fx:id="addResidentBtn111" mnemonicParsing="false" onAction="#handleBin" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Bin">
+                  <Button id="addBtn" fx:id="binDataBtn" mnemonicParsing="false" onAction="#handleBin" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Bin">
                      <effect>
                         <InnerShadow />
                      </effect>
@@ -163,21 +163,41 @@
                <children>
                   <TableView fx:id="residentsTable" prefHeight="584.0" prefWidth="1733.0">
                     <columns>
-                        <TableColumn fx:id="idCol" minWidth="0.0" prefWidth="97.0" text="ID" />
-                      <TableColumn fx:id="fullnameCol" editable="false" prefWidth="365.0" text="Full Name" />
-                      <TableColumn fx:id="ageCol" editable="false" minWidth="0.0" prefWidth="87.0" text="Age" />
-                        <TableColumn fx:id="sexCol" editable="false" minWidth="0.0" prefWidth="75.0" text="Sex" />
-                        <TableColumn fx:id="locationCol" editable="false" minWidth="0.0" prefWidth="236.0" text="Location" />
-                        <TableColumn fx:id="categoryCol" editable="false" minWidth="0.0" prefWidth="115.0" text="Category" />
-                        <TableColumn fx:id="addInfoCol" editable="false" minWidth="0.0" prefWidth="225.0" text="Additional Information" />
-                        <TableColumn fx:id="statusCol" editable="false" minWidth="0.0" prefWidth="93.0" text="Status" />
+                        <TableColumn fx:id="idCol" minWidth="0.0" prefWidth="26.0" text="ID" />
+                        <TableColumn editable="false" prefWidth="110.0" text="Fullname">
+                           <columns>
+                            <TableColumn fx:id="lastnameCol" editable="false" prefWidth="110.0" text="Last" />
+                              <TableColumn fx:id="firstnameCol" editable="false" prefWidth="110.0" text="First" />
+                              <TableColumn fx:id="middlenameCol" editable="false" prefWidth="110.0" text="Middle" />
+                              <TableColumn fx:id="qualifierCol" editable="false" minWidth="0.0" prefWidth="93.0" text="Qualifier" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn editable="false" minWidth="0.0" prefWidth="444.0" text="Demographic">
+                           <columns>
+                              <TableColumn fx:id="numberCol" editable="false" minWidth="0.0" prefWidth="86.0" text="Number" />
+                              <TableColumn fx:id="streetnameCol" editable="false" minWidth="0.0" prefWidth="76.0" text="Street Name" />
+                              <TableColumn fx:id="locationCol" editable="false" minWidth="0.0" prefWidth="60.0" text="Location" />
+                              <TableColumn fx:id="placeofbirthCol" editable="false" minWidth="0.0" prefWidth="83.0" text="Place of Birth" />
+                              <TableColumn fx:id="dateofbirthCol" editable="false" minWidth="0.0" prefWidth="75.0" text="Date of Birth" />
+                            <TableColumn fx:id="ageCol" editable="false" minWidth="0.0" prefWidth="32.0" text="Age" />
+                              <TableColumn fx:id="sexCol" editable="false" minWidth="0.0" prefWidth="31.0" text="Sex" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn editable="false" minWidth="0.0" prefWidth="87.0" text="Citizen Profile">
+                           <columns>
+                              <TableColumn fx:id="civilstatusCol" editable="false" minWidth="0.0" prefWidth="74.0" text="Civil Status" />
+                              <TableColumn fx:id="citizenshipCol" editable="false" minWidth="0.0" prefWidth="74.0" text="Citizenship" />
+                              <TableColumn fx:id="occupationCol" editable="false" minWidth="0.0" prefWidth="104.0" text="Occupation" />
+                              <TableColumn fx:id="relationshipCol" editable="false" minWidth="0.0" prefWidth="93.0" text="Relationship" />
+                           </columns></TableColumn>
+                        <TableColumn fx:id="statusCol" editable="false" minWidth="0.0" prefWidth="62.0" text="Status" />
                     </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
                      <effect>
                         <DropShadow />
                      </effect>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                   </TableView>
                </children>
             </HBox>

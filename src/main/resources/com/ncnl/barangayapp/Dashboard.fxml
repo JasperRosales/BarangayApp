@@ -4,8 +4,14 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedAreaChart?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,13 +19,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.68" pannable="true" prefHeight="832.0" prefWidth="818.0" vvalue="0.64" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ncnl.barangayapp.controller.DashboardController">
+<ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.68" pannable="true" prefHeight="832.0" prefWidth="1114.0" vvalue="0.64" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ncnl.barangayapp.controller.DashboardController">
   <content>
       <AnchorPane>
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="761.0" prefWidth="827.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard Analytics">
+                  <Text fill="#333333" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard Analytics">
                      <VBox.margin>
                         <Insets top="40.0" />
                      </VBox.margin>
@@ -27,147 +33,17 @@
                         <Font name="SansSerif Bold" size="30.0" />
                      </font>
                   </Text>
-                  <HBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="827.0" spacing="10.0">
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <children>
-                        <AnchorPane prefHeight="128.0" prefWidth="178.0" style="-fx-background-color: white;">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="178.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Residents" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font name="SansSerif Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="totalResidentsCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="26.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <effect>
-                              <DropShadow height="9.28" radius="5.605" width="15.14">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="128.0" prefWidth="172.0" style="-fx-background-color: white;">
-                           <effect>
-                              <DropShadow height="9.28" radius="5.605" width="15.14">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="178.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Senior Citizen" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font name="SansSerif Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="totalSeniorCitezenCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="26.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="128.0" prefWidth="172.0" style="-fx-background-color: white;">
-                           <effect>
-                              <DropShadow height="9.28" radius="5.605" width="15.14">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="178.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font name="SansSerif Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="totalStudentCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="26.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="128.0" prefWidth="172.0" style="-fx-background-color: white;">
-                           <effect>
-                              <DropShadow height="9.28" radius="5.605" width="15.14">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="178.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unclaimed Assistance" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font name="SansSerif Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="totalUnclaimed" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="170.8984375">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="26.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="15.0" />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="827.0" spacing="10.0">
+                  <Separator prefHeight="21.0" prefWidth="1112.0" />
+                  <HBox alignment="TOP_CENTER" prefHeight="223.0" prefWidth="1112.0" spacing="10.0">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                      <children>
-                        <AnchorPane prefHeight="167.0" prefWidth="420.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="186.0" prefWidth="593.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="423.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="187.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Residential Distribution" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Residential Distribution" textAlignment="CENTER" wrappingWidth="241.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
@@ -175,14 +51,14 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart fx:id="residentDistributionBarChart" prefHeight="122.0" prefWidth="219.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
+                                    <StackedAreaChart fx:id="stackedResidentAreaChart" alternativeColumnFillVisible="true" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" stylesheets="@assets/stacked-area-chart.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </StackedAreaChart>
                                  </children>
                               </VBox>
                            </children>
@@ -194,11 +70,11 @@
                               </DropShadow>
                            </effect>
                         </AnchorPane>
-                        <AnchorPane prefHeight="167.0" prefWidth="215.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="186.0" prefWidth="348.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="310.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="376.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gender Distribution" textAlignment="CENTER" wrappingWidth="221.8984375">
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender Range" textAlignment="CENTER" wrappingWidth="221.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
@@ -206,14 +82,11 @@
                                           <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
-                                    <BarChart fx:id="genderDistributionBarChart" prefHeight="122.0" prefWidth="219.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
+                                    <PieChart fx:id="genderPieChart" labelLineLength="1.0" labelsVisible="false" legendSide="TOP" prefHeight="164.0" prefWidth="325.0" stylesheets="@assets/pie-chart.css">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </PieChart>
                                  </children>
                               </VBox>
                            </children>
@@ -227,16 +100,213 @@
                         </AnchorPane>
                      </children>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="827.0" spacing="10.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="99.0" prefWidth="1112.0" spacing="10.0">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                      <children>
-                        <AnchorPane prefHeight="167.0" prefWidth="327.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="97.0" prefWidth="230.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="327.0">
+                              <HBox alignment="CENTER_LEFT" layoutX="-2.0" prefHeight="94.0" prefWidth="222.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student Distribution" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@assets/account.png" />
+                                       </image>
+                                       <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                       </effect>
+                                    </ImageView>
+                                    <VBox prefHeight="94.0" prefWidth="150.0">
+                                       <children>
+                                          <Text fx:id="totalResidentsCounter" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="91.8984375">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="30.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="18.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Residents" wrappingWidth="135.8984375">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <effect>
+                              <DropShadow height="9.28" radius="5.605" width="15.14">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="128.0" prefWidth="230.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
+                           <effect>
+                              <DropShadow height="9.28" radius="5.605" width="15.14">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@assets/account-school.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                       <effect>
+                                          <ColorAdjust brightness="1.0" contrast="0.45" />
+                                       </effect>
+                                    </ImageView>
+                                    <VBox prefHeight="92.0" prefWidth="178.0">
+                                       <children>
+                                          <Text fx:id="totalStudentCounter" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="100.8984375">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="30.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="18.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students" wrappingWidth="104.8984375">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="97.0" prefWidth="230.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="-2.0" prefHeight="94.0" prefWidth="232.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="60.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@assets/human-cane.png" />
+                                       </image>
+                                       <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                       </effect>
+                                    </ImageView>
+                                    <VBox prefHeight="94.0" prefWidth="130.0">
+                                       <children>
+                                          <Text fx:id="totalSeniorCitezenCounter" fill="#ebe3e3" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="124.8984375">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="30.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="18.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fill="#f5f5f5" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Senior Citizens" wrappingWidth="135.8984375">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <effect>
+                              <DropShadow height="9.28" radius="5.605" width="15.14">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="128.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                           <effect>
+                              <DropShadow height="9.28" radius="5.605" width="15.14">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.41325536370277405" blue="0.41325536370277405" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" style="-fx-background-color: #333333; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="60.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@assets/handshake.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="15.0" right="5.0" />
+                                       </HBox.margin>
+                                       <effect>
+                                          <ColorAdjust brightness="1.0" contrast="0.38" saturation="-0.14" />
+                                       </effect>
+                                    </ImageView>
+                                    <VBox prefHeight="94.0" prefWidth="110.0">
+                                       <children>
+                                          <Text fx:id="totalUnclaimed" fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="93.8984375">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="30.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="18.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Unclaimed Assistance" wrappingWidth="120.8984375">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="216.0" prefWidth="1112.0" spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <AnchorPane prefHeight="186.0" prefWidth="540.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="327.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Distribution" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
@@ -263,11 +333,11 @@
                               </DropShadow>
                            </effect>
                         </AnchorPane>
-                        <AnchorPane prefHeight="167.0" prefWidth="403.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="167.0" prefWidth="403.0" style="-fx-background-color: #333333; -fx-background-radius: 10;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="403.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="403.0" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date" textAlignment="CENTER" wrappingWidth="170.8984375">
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
                                           <Font name="SansSerif Bold" size="14.0" />
                                        </font>
@@ -276,6 +346,9 @@
                                        </VBox.margin>
                                     </Text>
                                  </children>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
                               </VBox>
                            </children>
                            <effect>
@@ -293,9 +366,9 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                      <children>
-                        <AnchorPane prefHeight="167.0" prefWidth="197.0" style="-fx-background-color: white;">
+                        <AnchorPane prefHeight="186.0" prefWidth="433.0" style="-fx-background-color: white;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="219.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="167.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Claim Status " textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
@@ -326,7 +399,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="167.0" prefWidth="508.0" style="-fx-background-color: white;">
                            <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="508.0">
+                              <VBox alignment="TOP_CENTER" layoutX="-14.0" layoutY="-14.0" prefHeight="186.0" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Summary" textAlignment="CENTER" wrappingWidth="170.8984375">
                                        <font>
@@ -341,7 +414,7 @@
                                           <Font name="SansSerif Bold" size="12.0" />
                                        </font>
                                        <VBox.margin>
-                                          <Insets top="15.0" />
+                                          <Insets top="20.0" />
                                        </VBox.margin>
                                     </Text>
                                     <Text fx:id="frequencyLabelSummary" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency: " wrappingWidth="426.8984375">
